@@ -77,6 +77,9 @@ export function randomlyMove(
       gants,
       { y: startingY, x: startingX },
       {
+        onStart: function () {
+          gants.style.visibility = 'visible';
+        },
         y: endY,
         x: endX,
         duration: duration,
