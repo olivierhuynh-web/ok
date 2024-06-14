@@ -1,94 +1,93 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+import React, { useRef, useEffect } from 'react';
+import Image from 'next/image';
+import styles from './page.module.css';
+import { randomlyMove } from './animation.js';
 
 export default function Home() {
+  const gant1 = useRef(null);
+  const gant2 = useRef(null);
+  const gant3 = useRef(null);
+  const gant4 = useRef(null);
+  const gant5 = useRef(null);
+
+  useEffect(() => {
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    setTimeout(() => {
+      randomlyMove(gant1.current, 372, 480, screenWidth, screenHeight);
+    }, 500); // Commence après 1 seconde
+
+    setTimeout(() => {
+      randomlyMove(gant2.current, 372, 480, screenWidth, screenHeight);
+    }, 1000); // Commence après 2 secondes
+
+    setTimeout(() => {
+      randomlyMove(gant3.current, 372, 480, screenWidth, screenHeight);
+    }, 1500); // Commence après 3 secondes
+
+    setTimeout(() => {
+      randomlyMove(gant4.current, 372, 480, screenWidth, screenHeight);
+    }, 2000); // Commence après 4 secondes
+
+    setTimeout(() => {
+      randomlyMove(gant5.current, 372, 480, screenWidth, screenHeight);
+    });
+  }, []);
+
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
+      <div className={styles.textWrapper}>
+        <div className={styles.description}>ok</div>
+        <div className={styles.baseline}>d'accord</div>
+        {/* <div ref={gant}> */}
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
+          className={styles.gants}
+          src='/gants.png'
+          alt='gants de Xavier'
+          width={372}
+          height={480}
           priority
+          ref={gant1}
         />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        <Image
+          className={styles.gants}
+          src='/gants.png'
+          alt='gants de Xavier'
+          width={372}
+          height={480}
+          priority
+          ref={gant2}
+        />
+        <Image
+          className={styles.gants}
+          src='/gants.png'
+          alt='gants de Xavier'
+          width={372}
+          height={480}
+          priority
+          ref={gant3}
+        />
+        <Image
+          className={styles.gants}
+          src='/gants.png'
+          alt='gants de Xavier'
+          width={372}
+          height={480}
+          priority
+          ref={gant4}
+        />
+        <Image
+          className={styles.gants}
+          src='/gants.png'
+          alt='gants de Xavier'
+          width={372}
+          height={480}
+          priority
+          ref={gant5}
+        />
+        {/* </div> */}
       </div>
     </main>
   );

@@ -1,21 +1,36 @@
 .main {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.textWrapper{
+  /* display: flex; */
+  /* align-items: center; */
 }
 
 .description {
+  text-align: center;
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
-  font-size: 0.85rem;
+  font-size: 5rem;
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
   font-family: var(--font-mono);
+}
+
+.baseline{
+  text-align: center;
+  color:grey;
+}
+
+.gants{
+  position : absolute;
 }
 
 .description a {
@@ -28,7 +43,7 @@
 .description p {
   position: relative;
   margin: 0;
-  padding: 1rem;
+  /* padding: 1rem; */
   background-color: rgba(var(--callout-rgb), 0.5);
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
   border-radius: var(--border-radius);
